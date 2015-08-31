@@ -1,7 +1,8 @@
-//////////////////////
+////////////////////
 //Megan Olivola
 //hw01 assignment
 //Welcome Class program
+//due 9/1/2015
 
 //define a class
 public class WelcomeClass{
