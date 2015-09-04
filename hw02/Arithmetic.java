@@ -4,6 +4,8 @@
 //Arithmetic Assignment
 //due 9/8/2015
 
+//to print with two decimal places, use printf instead of println and use "%.2f", value, then add a println to add space
+
 //define a class
 public class Arithmetic{
     
@@ -32,42 +34,53 @@ public class Arithmetic{
 
     //total cost of each kind of item
         
-        System.out.println("Item being bought = socks   ");
+        System.out.println("Item being bought = socks   "); //print out these lines
         System.out.println("Amount = " + nSocks);
         System.out.println("Cost of one unit = $" + sockCost$);
-        double totalSocks = (nSocks * sockCost$);
-        System.out.println("Cost of socks before tax = $" + "Value: %.2f",totalSocks);
-        double Socktax = (totalSocks * taxPercent);
+        double totalSocks = (nSocks * sockCost$); //calculate the cost of the socks without tax
+        System.out.printf("Cost of socks before tax = $" + "%.2f",totalSocks); //print the value with 2 decimals
+        double Socktax = (totalSocks * taxPercent); //calculate the tax
+        System.out.println(""); //space
+        System.out.printf("Tax of socks = $"+"%.2f",Socktax);  //print tax with 2 decimals
+        System.out.println(" "); //adding a line so I have space and it's easier to read the output
         System.out.println(" "); //adding a line so I have space and it's easier to read the output
         
         
-        System.out.println("Item being bought = glasses");
+        System.out.println("Item being bought = glasses"); //print out these lines
         System.out.println("Amount = " + nGlasses);
         System.out.println("Cost of one unit = $" + glassCost$);
-        double totalGlasses = (nGlasses * glassCost$);
-        System.out.println("Cost of glasses before tax = $");
-        System.out.printf("Value: %.2f",totalGlasses);
-        double Glassestax = (totalGlasses * taxPercent);
-        System.out.println(" ");
+        double totalGlasses = (nGlasses * glassCost$); //calculate the cost of the glasses without tax
+        System.out.printf("Cost of glasses before tax = $" + "%.2f",totalGlasses); //print the value with 2 decimals
+        double Glassestax = (totalGlasses * taxPercent); //calculate the tax
+        System.out.println(" "); //space
+        System.out.printf("Tax of Glasses = $"+ "%.2f",Glassestax); //print tax with two decimals
+        System.out.println(" "); //space
+        System.out.println(" "); //adding a line so I have space and it's easier to read the output
         
-        System.out.println("Item being bought = envelopes");
+        System.out.println("Item being bought = envelopes"); //print these lines
         System.out.println("Amount = " + nEnvelopes); 
         System.out.println("Cost of one unit = $" + envelopeCost$);
-        double totalEnvelopes = (nEnvelopes * envelopeCost$);
-        System.out.println("Cost of envelopes before tax = $");
-        System.out.printf("Value: %.2f",totalEnvelopes);
-        double Envelopetax = (totalEnvelopes * taxPercent);
-        System.out.println(" ");
+        double totalEnvelopes = (nEnvelopes * envelopeCost$); //calculate the cost of the glasses without tax
+        System.out.printf("Cost of envelopes before tax = $" + "%.2f",totalEnvelopes); //print the value with 2 decimals
+        double Envelopetax = (totalEnvelopes * taxPercent); //calculate the tax
+        System.out.println(" "); //space
+        System.out.printf("Tax of envelopes = $"+"%.2f", Envelopetax); //print tax with 2 decimals
+        System.out.println(" "); //space
+        System.out.println(" "); //adding a line so I have space and it's easier to read the output
         
      //total cost of purchase before tax
         double BeforeTaxTotal = (totalSocks + totalEnvelopes + totalGlasses);
-        System.out.println("Total before taxes = $");
-        System.out.printf("Value: %.2f",BeforeTaxTotal);
+        System.out.printf("Total before taxes = $" + "%.2f",BeforeTaxTotal); //print the total before tax with 2 decimals
+        System.out.println(" "); //adding a line so I have space and it's easier to read the output
         
     //total paid for transaction
-        double AfterTaxTotal = (BeforeTaxTotal + Socktax + Glassestax + Envelopetax);
-        System.out.printf( "Value:  %.2f", AfterTaxTotal); //to print with two decimal places, add "Value:  %.2f", value
-        System.out.println(" ");
+        double AfterTaxTotal = (BeforeTaxTotal + Socktax + Glassestax + Envelopetax); //calculate after tax total
+        double TotalTax = (Socktax + Glassestax + Envelopetax); //calculate total tax
+        System.out.printf("Total tax = $"+"%.2f",TotalTax); //print total tax with 2 decimals
+        System.out.println(" "); //space
+        System.out.printf("Total after taxes = $"+"%.2f", AfterTaxTotal); //print after tax total with 2 decimals
+        System.out.println(" "); //space
+    
          
     
         
