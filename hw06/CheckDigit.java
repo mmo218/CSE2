@@ -1,7 +1,7 @@
 /*
 Megan Olivola
 hw06 - Check Digit
-This program takes input from a user in the form of a 10-digit IBSN
+This program takes input from a user in the form of a 10-digit ISBN
 number and checks to make sure it is a valid number.
 due October 6th, 2015 */
 
@@ -82,15 +82,22 @@ public class CheckDigit {
           int Remainder = Sum%11; //mod it by 11
         int number=0; //initialize counter
         while (number<=10){ //
-            if (Remainder == number){ //if the remainder equals the counter
+            if (CheckDigit == Remainder && Remainder == number){ //if the remainder equals the checkdigit, remainder equals incrementing counter
                 System.out.println("This is a valid ISBN!"); //you have entered a valid IBSN
                 number=11; //then exit the while loop
             }
             number++; //if it didn't equal the counter, then increment the counter to run again and check
         }
         
-        
-        
+        if (CheckDigit != Remainder){ //if the checkdigit does not equal the remainder
+            if (Remainder == 10){
+                System.out.println("This is not a valid ISBN. Check digit should be X.");
+            }
+            else {
+            System.out.println("This is not a valid ISBN. Check digit should be "+ Remainder + "."); //tell user it's
+            //not a valid ISBN and tell user what the check digit should be.
+            }
+        }
         
     } //end of main method
     

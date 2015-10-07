@@ -1,6 +1,10 @@
 /*
 Megan Olivola
 hw06 - BarGraph
+This program takes a students spending throughout the week and tells you your average daily spending,
+as well as create a bar graph that shows you how much you're spending.  It also gives you
+an estimate of what your spending might be over the next 4 years, assuming your spending fluctuates
+up or down 20% each week based off of the week entered.
 due October 6th, 2015 */
 
 import java.util.Scanner; //import a scanner to my program
