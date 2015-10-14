@@ -2,6 +2,8 @@
 Megan Olivola
 hw 07 - Twisty
 
+this program asks user to inupt a length and width and then creates a helix pattern across the screen.
+
 October 9 2015 */
 
 import java.util.Scanner; //import my scanner
@@ -49,61 +51,46 @@ public class Twisty {
         } while (Width>Length || Width < 0); //this will continue to run until Parameter is a valid input
         
         
-   // if (Width%2 == 1){
-      /*  for(int i=0; i<Width; i++){
-            System.out.println("");
-            for(int j=0; j<Length; j++){
-                for (int k=0; k<Length; k++){
-                if (j%Length == k && i%Width== k){
-                    System.out.print("*");
-                }
-                else{
-                    System.out.print(" ");
-                }
-                }
-            }
-        }*/
-   /* }
-    else{
-        for(int i=0; i<Width; i++){
-            System.out.println("");
-            for(int j=0; j<Length; j++){
-              for (int k=0; k<Length; k++){
-                if (j%Length == k && i%Width== k){
-                    System.out.print("*");
-                }
-                else{
-                    System.out.print(" ");
-                }
-                }
-            }
-        }
-        
-    }
-        */
-        
-        
         for(int i = 0; i < Width; i++){
             System.out.println(""); //this will print out a new line for each width entered
             //the pattern is that for odd numbers, number*Width+/- i will yield my slashes
             //even numbers, number*Width+/- i will yield #
             for(int j = 0; j < Length; j++){
-                    if(j==(Width-i) || j==(3*Width-i) || j==(5*Width-i) || j==(7*Width-i)){ //pattern for forward slashes
-                     System.out.print("/");
+              //this part will tell the computer what to print in the horizontal areas  
+                //forward slashes
+                if (j%Width == Width - (i+1)){  //if the spot in the line is equal to a forward slash
+                  if (Width%2==1) { //and if it's an odd numbered vertical height
+                    if(j%2==i%2){ //if length and width are in phase
+                     System.out.print("/"); //print the slasth
                     }
-                    else if (j==(Width+i) || j==(3*Width+i) || j==(5*Width+i) || j==(7*Width+i)){ //pattern for back slashes
-                    System.out.print("\\");
+                    else {
+                        System.out.print("#"); //otherwise print #
                     }
-                    else if (j==i || j==(2*Width-i) || j==(2*Width+i) || j==(4*Width-i) || j==(4*Width+i)){ //print hashtag
-                    System.out.print("#");
-                    }
-                    else{
-                    System.out.print(" ");
-                     }
                 }
-        }
+                 else { //if it's an even height
+                    if((j/Width)%2 == 0) { //and the spot in the line is where a forward slash should be
+                        System.out.print("/"); //print the forward slash
+                    }
+                    else { //if it's where the hashtag whould be
+                        System.out.print("#"); //print the hashtag 
+                    }
+                 }
+                }
+                //back slashes
+                else if (j%(2*Width)==(Width+i)){ //mod j by 2 times the height because that's how often
+                //the symbol occurs in each line.  if it equals width+i
+                    System.out.print("\\"); //print the back slash
+                }
+                else if (j%(2*Width)==i){ 
+                    System.out.print("#"); //otherwise print the forward slash
+                }
+             else { //if you're not printing a slash or hashtag
+                 System.out.print(" "); //print a space
+             }
+         }//end of inner for loop
+        }//end of outer for loop
             
-        System.out.println(" ");
+        System.out.println(" "); //adding an extra space
         
           
           
