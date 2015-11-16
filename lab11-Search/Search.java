@@ -4,7 +4,7 @@ This program creates two arrays and then prints out minimums and maximums, then 
 November 6, 2015 */
 
 import java.util.Scanner; //import scanner
-import java.util.Arrays;
+
 //public class
 public class Search {
 //main method
