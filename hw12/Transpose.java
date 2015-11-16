@@ -4,13 +4,13 @@ This program creates an M x N matrix and transposes it.
 November 17th, 2015 */
 
 
-import java.util.Scanner;
+import java.util.Scanner; //import scanner
 //create public class
 public class Transpose {
     //create main method
     public static void main(String[] args){
-        Scanner MyScanner = new Scanner(System.in);
-        int height, width;
+        Scanner MyScanner = new Scanner(System.in); //now i can prompt user for input
+        int height, width; //declare height and width as ints
         do{
             System.out.print("Enter height: "); //ask user for input
             while (!MyScanner.hasNextInt()) { //if the input is not an int
@@ -41,9 +41,9 @@ public class Transpose {
         int[][] random = randomMatrix(height,width); //create random mxn matrix
         System.out.println("Here is your matrix: ");
         printMatrix(random); //call printMatrix with random being the input
-        int[][] randomtranspose = transposeMatrix(random,height,width);
-        System.out.println("Here is your transposed matrix: ");
-        printMatrix(randomtranspose);
+        int[][] randomtranspose = transposeMatrix(random,height,width); //create nxm matrix
+        System.out.println("Here is your transposed matrix: "); 
+        printMatrix(randomtranspose); //call printmatrix with transposed matrix being the input
         
     }
 //create random matrix method
@@ -59,31 +59,31 @@ public class Transpose {
     }//end of randomMatrix
 //creat printMatrix method
     public static void printMatrix(int[][] random){
-        /*for( int i = 0; i < random.length; i++ ) { 
-            for(int j=0; j<((random.length)-1);j++){
-                if( random[i].length != random[i+j].length ) { //check that it's rectangular
+        for( int i = 0; i < random.length; i++ ) { 
+           for(int j=1; j<random.length-i; j++){
+                if(random[i].length != random[i+j].length) { //check that it's rectangular
                 System.out.println("Sorry, your matrix input is not rectangular."); //tell user input is not rectangular.
                 return;
                 }
             }   
-        }*/
+        }
         for (int i=0; i<random.length; i++){
             for (int j=0; j < random[i].length; j++){
-                System.out.print(random[i][j]+" ");
+                System.out.print(random[i][j]+" "); //print out each with a space in between
             }
-            System.out.println("");
+            System.out.println(""); //put a space in between each line
          }
     return; //and return back to the main program
 }//end of printArray method
 
 //transpose the matrix
     public static int[][] transposeMatrix(int[][] random, int height, int width){
-       int[][]transpose = new int [width][height];
+       int[][]transpose = new int [width][height]; //declare transposed matrix to have opposite dimensions
         for (int i = 0; i < random.length; i++) {
             for (int j = 0; j < random[i].length; j++) {
-                int temp = random[i][j];
-                random[i][j] = transpose[j][i];
-                transpose[j][i] = temp;
+                int temp = random[i][j]; //store here
+                random[i][j] = transpose[j][i]; 
+                transpose [j][i] = temp;
             }
         }
         return transpose;
