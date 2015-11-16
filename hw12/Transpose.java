@@ -18,12 +18,12 @@ public class Transpose {
                 System.out.printf("Error: please type in an integer. ", input); //and print out this statement
                 }
             int input = MyScanner.nextInt(); //look at next input
-            while(input<0) { //if the input is less than zero
+            while(input<0 || input==0) { //if the input is less than zero
                 System.out.printf("Error: please only enter postive numbers. \n", input); //print this out
                 break;
                 }
             height = input; //Parameter is the first valid input
-        } while (height < 0); //this will continue to run until Parameter is a valid input
+        } while (height < 0 || height==0); //this will continue to run until Parameter is a valid input
          do{
             System.out.print("Enter width: "); //ask user for input
             while (!MyScanner.hasNextInt()) { //if the input is not an int
@@ -31,12 +31,12 @@ public class Transpose {
                 System.out.printf("Error: please type in an integer. ", input); //and print out this statement
                 }
             int input = MyScanner.nextInt(); //look at next input
-            while(input<0) { //if the input is less than zero
+            while(input<0 || input==0) { //if the input is less than zero
                 System.out.printf("Error: please only enter postive numbers. \n", input); //print this out
                 break;
                 }
             width = input; //Parameter is the first valid input
-        } while (width < 0); //this will continue to run until Parameter is a valid input
+        } while (width < 0 || width==0); //this will continue to run until Parameter is a valid input
         
         int[][] random = randomMatrix(height,width); //create random mxn matrix
         System.out.println("Here is your matrix: ");
@@ -69,7 +69,8 @@ public class Transpose {
         }
         for (int i=0; i<random.length; i++){
             for (int j=0; j < random[i].length; j++){
-                System.out.print(random[i][j]+" "); //print out each with a space in between
+                System.out.print(random[i][j]+"\t"); //print out each with a tab in between
+                //im using a tab so it looks nicer when printed!
             }
             System.out.println(""); //put a space in between each line
          }
